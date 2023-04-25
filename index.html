@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Competible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body>
+    <div class="g-createaccountin2" data-onsuccess="onCreateAccount"></div>
+    <div class="create-card-container">
+        <div class="create-card">
+            <div class="create-card-logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/3222/3222798.png" alt="logo">
+            </div>
+            
+            <div class="create-card-header">
+                <h1>Create Account</h1>
+                <div>Please create Account</div>
+                </div>
+                <div class="create-card-form">
+                  <div class="form-item">
+                    <span class="span form-item-icon material-symbols-rounded">badge</span>          
+                    <input type="text" placeholder="Enter Username" required autofocus id="username" name="username">
+                    <script>
+                      const usernameInputForm = document.getElementById('username');
+                      usernameInputForm.addEventListener("input", function (event){
+                        console.log(`Username value: ${usernameInputForm.value}`);
+                      });
+                    </script>
+                  <div class="form-item">
+                    <span class="span form-item-icon material-symbols-rounded">mail</span>         
+                    <input type="email" placeholder="Enter Email" required autofocus id="email" name="email">
+                    <script>
+                      const emailInputForm = document.getElementById('email');
+                      emailInputForm.addEventListener("input", function (event){
+                        console.log(`Email value: ${emailInputForm.value}`);
+                      });
+                    </script>
+                  <div class="form-item">
+                    
+                    <span class="span form-item-icon material-symbols-rounded">lock</span>
+                    <input type="password" placeholder="Enter Password" required autofocus id="password-field" name="password" required>
+                    <script>
+                      const passwordInputForm = document.getElementById('password-field');
+                      passwordInputForm.addEventListener("input", function (event){
+                        console.log(`Password value: ${passwordInputForm.value}`);
+                      });
+                    </script>
+                    <button type="button" id="show-password-btn" onclick="togglePasswordVisibility()">Show</button>  
+                  </div>
+                
+                <script>
+                    function togglePasswordVisibility() {
+                        var passwordField = document.getElementById("password-field");
+                        var showPasswordBtn = document.getElementById("show-password-btn");
+                        if (passwordField.type === "password") {
+                            passwordField.type = "text";
+                            showPasswordBtn.textContent = "Hide";
+                        } else {
+                            passwordField.type = "password";
+                            showPasswordBtn.textContent = "Show";
+                        }
+                    }
+                </script>
+                  </div>
+                </div>
+                  
+                    <button id="create-card-form">
+                      <div class="create-post-button">
+                        Add Photo
+                      </div>    
+                </button>
+                
+                    <button type="submit" id="create-account-btn">
+                      <div class="create-account-button">
+                        Create Account
+                      </div>    
+                      
+                      <div class="warning-icons">
+                        <script>
+                          document.getElementById("create-account-btn").addEventListener("click", function(event) {
+                            event.preventDefault();
+                            let username = document.getElementById("username").value;
+                            let email = document.getElementById("email").value;
+                            let password = document.getElementById("password-field").value;
+                            let usernameRegex = /^[a-zA-Z0-9]{3,}$/;
+                            let emailRegex = /^\S+@\S+\.\S+$/;
+                            let passwordRegex = /^(?=.*\d)(?=.*[a-z]).{8,}$/;
+                            let isValid = true;
+                        
+                            if (!usernameRegex.test(username)|| !emailRegex.test(email)|| !passwordRegex.test(password)) {
+                              isValid = false;
+                              alert("Please enter a valid validation.");
+                              const img = document.createElement('img');
+                              img.src = "https://cdn-icons-png.flaticon.com/512/564/564619.png";
+                              img.width = 32;
+                              img.height = 32;
+                              img.style.left = "70px";
+                              img.style.float = "left";
+                              img.style.top="20px"
+                              img.style.marginRight = "70px";
+                              img.style.position="relative";
+                              img.style.display="flex";
+                              img.style.alignItems="center"
+                              document.body.appendChild(img);
+                            }
+
+                            if (username === "") {
+                              alert("Please enter a username.");
+                            }
+                            if (email === "") {
+                              alert("Please enter an email.");
+                            }
+                            if (password === "") {
+                              alert("Please enter a password.");
+                            }
+                              
+                              
+                            if (username === "Moo") {
+                              let h1 = document.createElement("h1");
+                              h1.textContent = "Username used";
+                              document.body.appendChild(h1);
+                            }
+                        
+                            
+                            if (isValid){
+                            
+                            const container = document.createElement('div');
+                            container.classList.add('create-card-container-success');
+                          
+                            const card = document.createElement('div');
+                            card.classList.add('create-card');
+                          
+                            const logo = document.createElement('div');
+                            logo.classList.add('logo');
+                          
+                            const img = document.createElement('img');
+                            img.src = 'cloud (5).png';
+                            img.alt = 'Logo';
+                            logo.appendChild(img);
+                          
+                            const cardLogo = document.createElement('div');
+                            cardLogo.classList.add('create-card-logo');
+                          
+                            const textHeader = document.createElement('div');
+                            textHeader.classList.add('text-header');
+                          
+                            const h1 = document.createElement('h1');
+                            h1.textContent = 'Thanks For Support';
+                            textHeader.appendChild(h1);
+                          
+                            const div1 = document.createElement('div');
+                            div1.textContent = 'We appreciate it';
+                            textHeader.appendChild(div1);
+                          
+                            const mainText = document.createElement('div');
+                            mainText.classList.add('main-text');
+                          
+                            const div2 = document.createElement('div');
+                            div2.textContent = 'Your support is very important for us. We can\'t wait to see you in our social network.';
+                            mainText.appendChild(div2);
+                          
+                            const bottomText = document.createElement('div');
+                            bottomText.classList.add('bottom-text');
+                          
+                            const div3 = document.createElement('div');
+                            div3.textContent = 'After release we will let you know';
+                            bottomText.appendChild(div3);
+                          
+                            cardLogo.appendChild(textHeader);
+                            cardLogo.appendChild(mainText);
+                            cardLogo.appendChild(bottomText);
+                          
+                            card.appendChild(logo);
+                            card.appendChild(cardLogo);
+                          
+                            container.appendChild(card);
+                            document.body.appendChild(container);
+                            const form = document.createElement('div-form');
+                            form.classList.add('create-card-container-success');
+                            document.body.appendChild(form);
+                            const createCardContainer = document.querySelector('.create-card-container');
+                            createCardContainer.style.display = 'none';
+                          }
+                          });
+                        </script>
+                       </div>
+                    </button>    
+                    <div class="bottom-text">
+                      <div>After release we will let you know</div>
+                    </div>
+                    
+                  </form>
+                  
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
