@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Competible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body>
+    <div class="g-createaccountin2" data-onsuccess="onCreateAccount"></div>
+    <div class="create-card-container">
+        <div class="create-card">
+            <div class="create-card-logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/3222/3222798.png" alt="logo">
+            </div>
+            <div class="create-card-header">
+                <h1>Create Account</h1>
+                </div>
+                <div class="create-card-form">
+                  <div class="form-item">
+                    <span class="span form-item-icon material-symbols-rounded">badge</span>          
+                    <input type="username" placeholder="Enter Username" required autofocus id="username" name="username">
+                  <div class="form-item">
+                    <span class="span form-item-icon material-symbols-rounded">mail</span>         
+                    <input type="email" placeholder="Enter Email" required autofocus id="email" name="email">
+                  <div class="form-item">
+                    <span class="span form-item-icon material-symbols-rounded">lock</span>
+                    <input type="password" placeholder="Enter Password" required autofocus id="password-field" name="password" required>
+                    <button style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: .7rem;" type="button" id="show-password-btn" onclick="togglePasswordVisibility()">Show</button>
+                  </div>
+                  </div>
+                  </div>
+                  <label for="fileInput" class="create-post-btn">
+                    <input id="fileInput" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/quicktime" multiple="" tabindex="-1" type="file" data-testid="fileInput" style="display: none;">
+                    <div class="create-post-button">
+                      Download Picture
+                    </div>
+                  </label>
+                  <button style="font-family: 'Poppins', sans-serif; font-weight: 600;" type="submit" id="create-account-btn">
+                    <div class="create-account-button">
+                      Create Account
+                    </div>
+                  </button>
+                      <div class="warning-icons">
+                       </div>
+                    </button>    
+                    <div class="bottom-text">
+                      <div>After release we will let you know</div>
+                  </div>
+                </div>
+              </div>
+        <script src="script.js"></script>
+      </div>
+    </body>
+</html>
